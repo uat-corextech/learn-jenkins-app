@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    image node:18-alpine
+                    image 'node:18-alpine'
                     reuseNode true
                 }
             }
@@ -18,9 +18,8 @@ pipeline {
                 npm run build 
                 ls -al
                 '''
-                
             }
         }
     }
 }
- // added build stage 
+// added build stage
