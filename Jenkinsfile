@@ -36,5 +36,10 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            junit 'test-result/junit.xml'
+        }
+    }
 }
 // added build stage
