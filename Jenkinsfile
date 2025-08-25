@@ -31,6 +31,7 @@ pipeline {
                 sh '''
                 echo "Test stage"
                 ls -al build/
+                npm test
                 '''
             }
         }
