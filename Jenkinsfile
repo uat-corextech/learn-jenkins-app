@@ -31,7 +31,8 @@ pipeline {
             }
             steps {
                 sh '''
-                echo "Test stage"
+                #way to comment in script/ bash/shell
+                #echo "Test stage"
                 test -f  build/index.html
                 npm test
                 '''
