@@ -39,6 +39,23 @@ pipeline {
                 '''
             }
         }
+        stage('E2E') {
+            agent {
+                docker {
+                    image 'mcr.microsoft.com/playwright:v1.39.0-jammy'
+                    reuseNode true
+                    //line tell run container as root to avoid permission issue
+                    args '-u root'
+                }
+            }
+            steps {
+                sh '''
+                npm install -g serve
+                serve -s build
+                npx playwrite test
+                '''
+            }
+        }
     }
 
     post {
