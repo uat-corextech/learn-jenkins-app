@@ -70,3 +70,4 @@ pipeline {
 }
 // added build stage
 // starting end to end testing stage
+//understand running stage in parallel
